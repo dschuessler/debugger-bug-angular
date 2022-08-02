@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  test: 
+    image: "node:lts"
+    working_dir: /test
+    ports:
+      - 4200:4200
+    volumes:
+      - ./test:/test
+    command: npm run start -- --host 0.0.0.0
