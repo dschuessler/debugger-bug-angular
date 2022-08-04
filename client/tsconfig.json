@@ -1,0 +1,39 @@
+{
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "../dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "../node_modules/@types",
+      // This one is for VSCode only until it can pick up types from tsconfig.spec.json.
+      // See https://github.com/microsoft/vscode/issues/12463
+      "node_modules/karma-viewport"
+    ],
+    "lib": ["es2017", "dom"],
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@utilityServices": ["app/core/services/utility-services/index.ts"],
+      "@utilityServices/*": ["app/core/services/utility-services/*"],
+      "@services": ["app/core/services/index.ts"],
+      "@services/*": ["app/core/services/*"],
+      "@serviceUrls": ["app/core/services/serviceUrls/index.ts"],
+      "@navUrls": ["app/shared/urls/index.ts"],
+      "@models": ["app/shared/models/index.ts"],
+      "@shared/*": ["app/shared/*"],
+      "core-js/es7/reflect": ["../node_modules/core-js/proposals/reflect-metadata"],
+      "core-js/es6/*": ["../node_modules/core-js/es/*"]
+    }
+  },
+  "exclude": ["../node_modules"]
+}
